@@ -8,12 +8,12 @@ import fakeFlux from './fake-flux';
 describe('store', () => {
   describe('reducers', () => {
     it('#add', () => {
-      const newState = add(i({}), CONTEXT);
+      const newState = add(CONTEXT, {}, i({}), {});
       assert(newState.hasOwnProperty(CONTEXT.app));
     });
 
     it('#remove', () => {
-      const newState = remove(i({[APP]: ''}), APP);
+      const newState = remove(APP, {}, i({[APP]: ''}));
       assert(!newState.hasOwnProperty(APP));
     });
   });

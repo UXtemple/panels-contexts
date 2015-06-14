@@ -1,10 +1,10 @@
 import { Store } from 'flummox';
 import i from 'seamless-immutable';
 
-export function add(state, {app, context}) {
+export function add({app, context}, payload, state) {
   return state.merge({[app]: context()});
 }
-export function remove(state, app) {
+export function remove(app, payload, state) {
   const { [app]: context, ...rest } = state;
   return rest;
 }
@@ -16,8 +16,8 @@ export default class ContextsStore extends Store {
     super();
     this.state = i({});
     const actionIds = flux.getActionIds('contexts');
-    this.register(actionIds.add, context => this.setState(add(this.state, context)));
-    this.register(actionIds.remove, app => this.setState(remove(this.state, app)));
+    this.register(actionIds.add, add);
+    this.register(actionIds.remove, remove);
   }
 
   find(app) { return this.state[app] }
