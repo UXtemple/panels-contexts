@@ -1,0 +1,8 @@
+# Change log
+
+## [0.1.0] - 2015-06-14
+### Added
+
+- Basic actions and store to add/remove contexts.
+- Playground with a flux app.
+- Tests.
