@@ -1,18 +1,19 @@
 import { add, remove } from '../actions';
-import { ADD_CONTEXT, REMOVE_CONTEXT } from '../constants';
+import { ADD, REMOVE } from '../action-types';
 import { APP, CONTEXT } from './context';
 import assert from 'assert';
 
 describe('actions', () => {
   it('#add', () => {
-    const {type, context} = add(CONTEXT);
-    assert(type === ADD_CONTEXT, 'type');
-    assert(context === CONTEXT, 'payload');
+    const {type, app, context} = add(CONTEXT);
+    assert(type === ADD, 'type');
+    assert(app === CONTEXT.app, 'payload: app');
+    assert(context === CONTEXT.context, 'payload: context');
   });
 
   it('#remove', () => {
     const {type, app} = remove(APP);
-    assert(type === REMOVE_CONTEXT, 'type');
-    assert(app === APP, 'payload');
+    assert(type === REMOVE, 'type');
+    assert(app === CONTEXT.app, 'payload: app');
   });
 });

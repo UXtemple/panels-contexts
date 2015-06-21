@@ -1,15 +1,16 @@
-import { ADD_CONTEXT, REMOVE_CONTEXT } from './constants';
+import { ADD, REMOVE } from './action-types';
 
-export function add(context) {
+export function add({app, context}) {
   return {
-    type: ADD_CONTEXT,
+    type: ADD,
+    app,
     context
-  };
+  }
 }
 
 export function remove(app) {
   return {
-    type: REMOVE_CONTEXT,
+    type: REMOVE,
     app
-  };
+  }
 }

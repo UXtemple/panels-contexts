@@ -1,0 +1,2 @@
+export const ADD = 'PANELS:CONTEXTS:ADD';
+export const REMOVE = 'PANELS:CONTEXTS:REMOVE';

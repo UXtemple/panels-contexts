@@ -1,17 +1,17 @@
-import { ADD_CONTEXT, REMOVE_CONTEXT } from '../constants';
+import { ADD, REMOVE } from '../action-types';
 import { APP, CONTEXT } from './context';
 import assert from 'assert';
 import i from 'seamless-immutable';
 import reducer from '../reducer';
 
 describe('reducer', () => {
-  it('handles ADD_CONTEXT', () => {
-    const newState = reducer(i({}), {type: ADD_CONTEXT, context: CONTEXT});
+  it('handles ADD', () => {
+    const newState = reducer(i({}), {type: ADD, ...CONTEXT});
     assert(newState.hasOwnProperty(CONTEXT.app));
   });
 
-  it('handles REMOVE_CONTEXT', () => {
-    const newState = reducer(i({[APP]: ''}), {type: REMOVE_CONTEXT, app: APP});
+  it('handles REMOVE', () => {
+    const newState = reducer(i({[APP]: ''}), {type: REMOVE, app: APP});
     assert(!newState.hasOwnProperty(APP));
   });
 });
