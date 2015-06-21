@@ -1,6 +1,5 @@
 import * as PanelsContexts from '../index';
 import { createRedux } from 'redux';
-import { Provider } from 'redux/react';
 
 const redux = createRedux({contexts: PanelsContexts.reducer});
 
