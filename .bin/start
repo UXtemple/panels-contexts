@@ -4,8 +4,8 @@ PG=./playground
 
 ./node_modules/.bin/watchify --no-bundle-external --extension .es6 -o $PG/playground.js -v -d $PG/playground.es6 &
 ./node_modules/.bin/watchify `.bin/extract-dependencies` \
-  -r flummox/addons/react \
-  -r react/addons \
+  -r redux \
+  -r redux/react \
   -r react \
   -v -o $PG/vendor.js ./package.json &
 ./node_modules/.bin/livereloadify $PG &

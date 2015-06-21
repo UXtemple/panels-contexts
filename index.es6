@@ -1,2 +1,4 @@
 export * as Actions from './actions';
-export { default as Store } from './store';
+export * as Constants from './constants';
+export * as getters from './getters';
+export reducer from './reducer';
