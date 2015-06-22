@@ -18,4 +18,4 @@ console.log('Welcome to panels-contexts playground.');
 console.log('https://contexts.usepanels.com');
 console.log('Playground module', Playground);
 
-console.log('contexts:', redux.getState('contexts').contexts);
+console.log('contexts:', redux.getState().contexts);
