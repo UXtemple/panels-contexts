@@ -5,14 +5,14 @@ import assert from 'assert';
 
 describe('actions', () => {
   it('#add', () => {
-    const {type, app, context} = add(CONTEXT);
+    const {type, payload: {app, context}} = add(CONTEXT);
     assert(type === ADD, 'type');
     assert(app === CONTEXT.app, 'payload: app');
     assert(context === CONTEXT.context, 'payload: context');
   });
 
   it('#remove', () => {
-    const {type, app} = remove(APP);
+    const {type, payload: {app}} = remove(APP);
     assert(type === REMOVE, 'type');
     assert(app === CONTEXT.app, 'payload: app');
   });

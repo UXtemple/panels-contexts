@@ -6,12 +6,12 @@ import reducer from '../reducer';
 
 describe('reducer', () => {
   it('handles ADD', () => {
-    const newState = reducer(i({}), {type: ADD, ...CONTEXT});
+    const newState = reducer(i({}), {type: ADD, payload: CONTEXT});
     assert(newState.hasOwnProperty(CONTEXT.app));
   });
 
   it('handles REMOVE', () => {
-    const newState = reducer(i({[APP]: ''}), {type: REMOVE, app: APP});
+    const newState = reducer(i({[APP]: ''}), {type: REMOVE, payload: {app: APP}});
     assert(!newState.hasOwnProperty(APP));
   });
 });
